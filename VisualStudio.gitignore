@@ -373,3 +373,8 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+
+#For GCP
+app.yaml
+.gcloudignore.
