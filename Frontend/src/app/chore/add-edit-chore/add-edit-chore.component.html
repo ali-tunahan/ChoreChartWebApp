@@ -1,0 +1,38 @@
+<div class="form-froup row">
+
+    <label class="col-sm-2 col-form-label">Chore Name</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="Name"
+        placeholder="optional">
+    </div>
+    <label class="col-sm-2 col-form-label">Chore Priority</label>
+    <div class="col-sm-10">
+        <mat-select class='form-control' selected = "null" [(ngModel)]="Priority">
+            <mat-option value=0>Low</mat-option>
+            <mat-option value=1>Medium</mat-option>
+            <mat-option value=2>High</mat-option>
+           <mat-option value=3>Critical</mat-option>
+        </mat-select>
+    </div>
+
+    <label class="col-sm-2 col-form-label">Chore Description</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="Description"
+        placeholder="optional">
+    </div>
+    <label class="col-sm-2 col-form-label">Chore IsDone</label>
+    <div class="col-sm-10">
+        <mat-select class='form-control' [(ngModel)]="IsDone">
+            <mat-option value=0>No</mat-option>
+            <mat-option value=1>Yes</mat-option>
+        </mat-select>
+    </div>
+</div>
+
+<button (click)="addChore()" *ngIf="cho.Id==0" class="btn btn-primary">
+    Add
+</button>
+
+<button (click)="updateChore()" *ngIf="cho.Id!=0" class="btn btn-primary">
+    Update
+</button>

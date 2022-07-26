@@ -1,0 +1,85 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary float-right m-2" 
+data-toggle="modal" data-target="#exampleModal"
+(click)="addClick()"
+data-backdrop="static" data-keyboard="false"
+>
+    Add Chore
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">{{ModalTitle}}</h5>
+          <button type="button" class="close" 
+          data-dismiss="modal" aria-label="Close"
+          (click)="closeClick()" >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <app-add-edit-chore [cho]="cho" *ngIf="ActivateAddEditChoreComp">
+            </app-add-edit-chore>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<table class="table table-stripped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Priority</th>
+      <th>Description</th>
+      <td>&nbsp;</td>
+      <th>Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let dataItem of UnfinishedChoresList">
+
+      <td>{{dataItem.Name}}</td>
+      <td *ngIf="dataItem.Priority == 0">{{"Low"}}</td>
+      <td *ngIf="dataItem.Priority == 1">{{"Medium"}}</td>
+      <td *ngIf="dataItem.Priority == 2">{{"High"}}</td>
+      <td *ngIf="dataItem.Priority == 3">{{"Critical"}}</td>
+      <td>{{dataItem.Description}}</td>
+      <td>{{dataItem.DateToDo}}</td>
+      <td>
+      <button mat-icon-button type="button" class="btn btn-light mr-1" data-toggle="modal" data-target="#exampleModal"
+      (click)="editClick(dataItem)" data-backdrop="static" data-keyboard="false">
+      <mat-icon>edit</mat-icon>
+      </button>
+        <button mat-icon-button type="button" class="btn btn-danger mr-1" data-toggle="modal"
+          (click)="deleteClick(dataItem)" data-backdrop="static" data-keyboard="false">
+          <mat-icon>delete</mat-icon>
+        </button>
+
+      </td>
+    </tr>
+    <tr style="text-decoration: line-through;" *ngFor="let dataItem of FinishedChoresList">
+      <td>{{dataItem.Name}}</td>
+      <td *ngIf="dataItem.Priority == 0">{{"Low"}}</td>
+      <td *ngIf="dataItem.Priority == 1">{{"Medium"}}</td>
+      <td *ngIf="dataItem.Priority == 2">{{"High"}}</td>
+      <td *ngIf="dataItem.Priority == 3">{{"Critical"}}</td>
+      <td>{{dataItem.Description}}</td>
+      <td>{{dataItem.DateToDo}}</td>
+      <td>
+        <button mat-icon-button type="button" class="btn btn-light mr-1" data-toggle="modal" data-target="#exampleModal"
+          (click)="editClick(dataItem)" data-backdrop="static" data-keyboard="false">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button type="button" class="btn btn-danger mr-1" data-toggle="modal"
+          (click)="deleteClick(dataItem)" data-backdrop="static" data-keyboard="false">
+          <mat-icon>delete</mat-icon>
+        </button>
+    
+      </td>
+    </tr>
+  </tbody>
+
