@@ -60,7 +60,6 @@ export class ShowChoreComponent implements OnInit {
     this.service.updateChore(item).subscribe(data => {
       this.refreshChoresList();
     })
-    this.refreshChoresList();
   }
 
   refreshChoresList(){
