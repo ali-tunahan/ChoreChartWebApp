@@ -1,10 +1,10 @@
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary float-right m-2" 
+<button mat-icon-button type="button" class="btn btn-primary float-right m-2" 
 data-toggle="modal" data-target="#exampleModal"
 (click)="addClick()"
 data-backdrop="static" data-keyboard="false"
 >
-    Add Chore
+    <mat-icon>add_box</mat-icon>
   </button>
   
   <!-- Modal -->
@@ -58,6 +58,9 @@ data-backdrop="static" data-keyboard="false"
           (click)="deleteClick(dataItem)" data-backdrop="static" data-keyboard="false">
           <mat-icon>delete</mat-icon>
         </button>
+        <button mat-icon-button type="button" (click)="changeIsDoneClick(dataItem)" class="btn btn-success mr-1"> 
+          <mat-icon>done</mat-icon>
+        </button>
 
       </td>
     </tr>
@@ -78,6 +81,9 @@ data-backdrop="static" data-keyboard="false"
           (click)="deleteClick(dataItem)" data-backdrop="static" data-keyboard="false">
           <mat-icon>delete</mat-icon>
         </button>
+          <button mat-icon-button type="button" (click)="changeIsDoneClick(dataItem)" class="btn btn-warning mr-1">
+            <mat-icon>redo</mat-icon>
+          </button>
     
       </td>
     </tr>

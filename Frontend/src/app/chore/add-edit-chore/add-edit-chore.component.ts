@@ -1,6 +1,6 @@
 import { Component, OnInit,Input } from '@angular/core';
 import {SharedService} from 'src/app/shared.service';
-
+import { ShowChoreComponent } from '../show-chore/show-chore.component';
 @Component({
   selector: 'app-add-edit-chore',
   templateUrl: './add-edit-chore.component.html',
@@ -34,6 +34,7 @@ export class AddEditChoreComponent implements OnInit {
               };
     this.service.addChore(val).subscribe(res=>{
       alert("Chore Added");
+      
     });
   }
 

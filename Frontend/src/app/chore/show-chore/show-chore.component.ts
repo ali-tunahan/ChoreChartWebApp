@@ -55,6 +55,13 @@ export class ShowChoreComponent implements OnInit {
     this.refreshChoresList();
   }
 
+  changeIsDoneClick (item:any) {
+    item.IsDone = Math.abs(item.IsDone - 1);
+    this.service.updateChore(item).subscribe(data => {
+      this.refreshChoresList();
+    })
+    this.refreshChoresList();
+  }
 
   refreshChoresList(){
     this.FinishedChoresList = [];
