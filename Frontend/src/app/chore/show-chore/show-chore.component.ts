@@ -33,7 +33,6 @@ export class ShowChoreComponent implements OnInit {
     }
     this.ModalTitle="Add Chore";
     this.ActivateAddEditChoreComp=true;
-
   }
 
   editClick(item:any){

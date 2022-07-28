@@ -1,12 +1,6 @@
 <!-- Button trigger modal -->
-<button mat-icon-button type="button" class="btn btn-primary float-right m-2" 
-data-toggle="modal" data-target="#exampleModal"
-(click)="addClick()"
-data-backdrop="static" data-keyboard="false"
->
-    <mat-icon>add_box</mat-icon>
-  </button>
-  
+<br><br>
+
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
@@ -15,7 +9,7 @@ data-backdrop="static" data-keyboard="false"
           <h5 class="modal-title" id="exampleModalLabel">{{ModalTitle}}</h5>
           <button type="button" class="close" 
           data-dismiss="modal" aria-label="Close"
-          (click)="closeClick()" >
+          (click)="closeClick()">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -27,8 +21,14 @@ data-backdrop="static" data-keyboard="false"
     </div>
   </div>
 
+<div class = "contain">
+  <button mat-fab type = "button" class="btn btn-light mr-1" color = "accent" data-toggle="modal" data-target="#exampleModal"
+    data-backdrop="static" (click)="addClick()" data-keyboard="false">
+    <mat-icon>add_circle</mat-icon>
+  </button>
 
 
+<br><br>
 <table class="table table-stripped">
   <thead>
     <tr>
@@ -88,4 +88,4 @@ data-backdrop="static" data-keyboard="false"
       </td>
     </tr>
   </tbody>
-
+<div>

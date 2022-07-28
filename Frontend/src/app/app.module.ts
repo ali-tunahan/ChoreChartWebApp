@@ -13,12 +13,18 @@ import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MatSelectModule } from '@angular/material/select'
 import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatRippleModule } from "@angular/material/core";
+import { HomepageComponent } from './homepage/homepage.component';
+import { MatCardModule } from '@angular/material/card';
 @NgModule({
   declarations: [
     AppComponent,
     ChoreComponent,
     ShowChoreComponent,
     AddEditChoreComponent,
+    HomepageComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,6 +37,11 @@ import { MatButtonModule } from '@angular/material/button';
     [BrowserAnimationsModule],
     MatSelectModule,
     MatButtonModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatRippleModule,
+    MatCardModule,
+
   ],
   providers: [SharedService],
   bootstrap: [AppComponent]
