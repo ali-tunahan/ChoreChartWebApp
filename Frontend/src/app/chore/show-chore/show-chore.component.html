@@ -39,7 +39,8 @@
         Name</th>
       <th>
         <div class = "d-flex flex-row">
-          <mat-select class='form-control' selected="null" [(ngModel)]="ChorePriorityFilter" class = "form-control" (keyup)="FilterFn()" placeholder="Filter">
+          <mat-select class='form-control' selected="null" [(ngModel)]="ChorePriorityFilter" class = "form-control" (selectionChange)="FilterFn()" placeholder="Filter">
+            <mat-option value="">All</mat-option>
             <mat-option value=0>Low</mat-option>
             <mat-option value=1>Medium</mat-option>
             <mat-option value=2>High</mat-option>
@@ -57,7 +58,7 @@
       <td>&nbsp;</td>
       <th>
         <div class="d-flex flex-row">
-          <mat-slide-toggle class="example-margin" [(ngModel)]="HideFinishedChores" (click)="FilterFn()">
+          <mat-slide-toggle class="example-margin"[(ngModel)]="ShowFinishedChores" (change)="FilterFn()">
             Show Finished
           </mat-slide-toggle>
         </div>

@@ -26,7 +26,7 @@ export class ShowChoreComponent implements OnInit {
   ChoresListFinishedWithoutFilter: any
   ChorePriorityFilter:string = ""
   ChoreDescriptionFilter: string = ""
-  HideFinishedChores: boolean = true
+  ShowFinishedChores: boolean = true
 
 
   ngOnInit(): void {
@@ -92,12 +92,12 @@ export class ShowChoreComponent implements OnInit {
     var ChorePriorityFilter = this.ChorePriorityFilter;
     var ChoreNameFilter = this.ChoreNameFilter;
     var ChoreDescriptionFilter = this.ChoreDescriptionFilter;
-    var HideFinishedChores = this.HideFinishedChores;
+    var HideFinishedChores = this.ShowFinishedChores;
     this.FinishedChoresList = this.ChoresListFinishedWithoutFilter.filter(function (el:any){
       return el.Priority.toString().toLowerCase().includes(ChorePriorityFilter.toString().trim().toLowerCase()) 
         && el.Name.toString().toLowerCase().includes(ChoreNameFilter.toString().trim().toLowerCase())
         && el.Description.toString().toLowerCase().includes(ChoreDescriptionFilter.toString().trim().toLowerCase())
-        && !(HideFinishedChores)
+        && (HideFinishedChores)
     });
     this.UnfinishedChoresList = this.ChoresListUnfinishedWithoutFilter.filter(function (el: any) {
       return el.Priority.toString().toLowerCase().includes(ChorePriorityFilter.toString().trim().toLowerCase())
