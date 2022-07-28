@@ -374,6 +374,7 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 
+*.cachefile
 
 #For GCP
 app.yaml
