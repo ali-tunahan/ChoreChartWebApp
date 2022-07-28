@@ -27,16 +27,42 @@
     <mat-icon>add_circle</mat-icon>
   </button>
 
-
 <br><br>
 <table class="table table-stripped">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Priority</th>
-      <th>Description</th>
+      <th>
+        <div class="d-flex flex-row">
+          <input [(ngModel)]="ChoreNameFilter" class="form-control" (keyup)="FilterFn()" placeholder="Filter">
+        </div>
+        <br>
+        Name</th>
+      <th>
+        <div class = "d-flex flex-row">
+          <mat-select class='form-control' selected="null" [(ngModel)]="ChorePriorityFilter" class = "form-control" (keyup)="FilterFn()" placeholder="Filter">
+            <mat-option value=0>Low</mat-option>
+            <mat-option value=1>Medium</mat-option>
+            <mat-option value=2>High</mat-option>
+            <mat-option value=3>Critical</mat-option>
+          </mat-select>
+        </div>
+        <br>
+        Priority</th>
+      <th>
+        <div class="d-flex flex-row">
+         <input [(ngModel)]="ChoreDescriptionFilter" class="form-control" (keyup)="FilterFn()" placeholder="Filter">
+        </div>
+        <br>
+        Description</th>
       <td>&nbsp;</td>
-      <th>Options</th>
+      <th>
+        <div class="d-flex flex-row">
+          <mat-slide-toggle class="example-margin" [(ngModel)]="HideFinishedChores" (click)="FilterFn()">
+            Show Finished
+          </mat-slide-toggle>
+        </div>
+        <br>
+      Options</th>
     </tr>
   </thead>
   <tbody>

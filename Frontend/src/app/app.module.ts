@@ -18,6 +18,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatRippleModule } from "@angular/material/core";
 import { HomepageComponent } from './homepage/homepage.component';
 import { MatCardModule } from '@angular/material/card';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +42,7 @@ import { MatCardModule } from '@angular/material/card';
     MatToolbarModule,
     MatRippleModule,
     MatCardModule,
+    MatSlideToggleModule,
 
   ],
   providers: [SharedService],

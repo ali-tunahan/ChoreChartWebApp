@@ -21,6 +21,14 @@ export class ShowChoreComponent implements OnInit {
   ActivateAddEditChoreComp:boolean=false;
   cho:any;
 
+  ChoreNameFilter:string = ""
+  ChoresListUnfinishedWithoutFilter:any
+  ChoresListFinishedWithoutFilter: any
+  ChorePriorityFilter:string = ""
+  ChoreDescriptionFilter: string = ""
+  HideFinishedChores: boolean = true
+
+
   ngOnInit(): void {
     this.refreshChoresList();
   }
@@ -64,16 +72,38 @@ export class ShowChoreComponent implements OnInit {
   refreshChoresList(){
     this.FinishedChoresList = [];
     this.UnfinishedChoresList = [];
+    this.ChoresListUnfinishedWithoutFilter = [];
+    this.ChoresListFinishedWithoutFilter = [];
     this.service.getAllChores().subscribe(data=>{
       for (let index = 0; index < data.length; index++) {
         if (data[index].IsDone == 0) {
-          this.UnfinishedChoresList.push(data[index])
+          this.UnfinishedChoresList.push(data[index]);
+          this.ChoresListUnfinishedWithoutFilter.push(data[index]);
         }else{
           this.FinishedChoresList.push(data[index])
+          this.ChoresListFinishedWithoutFilter.push(data[index])
         }
-        
       }
+      this
     });
+  }
+
+  FilterFn(){
+    var ChorePriorityFilter = this.ChorePriorityFilter;
+    var ChoreNameFilter = this.ChoreNameFilter;
+    var ChoreDescriptionFilter = this.ChoreDescriptionFilter;
+    var HideFinishedChores = this.HideFinishedChores;
+    this.FinishedChoresList = this.ChoresListFinishedWithoutFilter.filter(function (el:any){
+      return el.Priority.toString().toLowerCase().includes(ChorePriorityFilter.toString().trim().toLowerCase()) 
+        && el.Name.toString().toLowerCase().includes(ChoreNameFilter.toString().trim().toLowerCase())
+        && el.Description.toString().toLowerCase().includes(ChoreDescriptionFilter.toString().trim().toLowerCase())
+        && !(HideFinishedChores)
+    });
+    this.UnfinishedChoresList = this.ChoresListUnfinishedWithoutFilter.filter(function (el: any) {
+      return el.Priority.toString().toLowerCase().includes(ChorePriorityFilter.toString().trim().toLowerCase())
+        && el.Name.toString().toLowerCase().includes(ChoreNameFilter.toString().trim().toLowerCase())
+        && el.Description.toString().toLowerCase().includes(ChoreDescriptionFilter.toString().trim().toLowerCase());
+    }) 
   }
 
 }
