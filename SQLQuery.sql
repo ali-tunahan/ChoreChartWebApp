@@ -1,7 +1,7 @@
-﻿CREATE DATABASE ChoreChartDatabase
+﻿CREATE DATABASE ToDoList
 
 GO
-USE ChoreChartDatabase
+USE ToDoListToDoList
 CREATE TABLE [dbo].[Chores] (
     [Id]          INT           IDENTITY (1, 1) NOT NULL,
     [Name]        NVARCHAR (50) NULL,
