@@ -126,8 +126,7 @@ Project Link: [https://github.com/ali-tunahan/ChoreChartWebApp](https://github.c
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
-
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
+These resources helped me to learn .Net and Angular for this project
 
 * [Angular Components Doc](https://material.angular.io/components/categories)
 * [Youtube Example Project](https://www.youtube.com/watch?v=Dpv6lUKNL9o)
