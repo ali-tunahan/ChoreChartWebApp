@@ -13,7 +13,7 @@
   <h3 align="center">A Chore Chart Web Application</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    A web app to keep track of daily chores
     <br />
     <br />
     ·
