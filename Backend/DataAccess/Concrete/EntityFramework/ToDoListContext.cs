@@ -13,6 +13,7 @@ namespace DataAccess.Concrete.EntityFramework
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //Insert the location of the Db (ip if not local)
+            //If local change \mssqllocaldb to where your database is in
             optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=ToDoList;Trusted_Connection=true");
 
         }
