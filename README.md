@@ -51,7 +51,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-The project is a very simple web application that keeps track of daily chores. I used asp.net for the backend and built a WebAPI. I used various frameworks too listed below.
+The project is a very simple web application that keeps track of daily chores that also has some business rules. I used asp.net for the backend and built a WebAPI. I used various frameworks too listed below.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
