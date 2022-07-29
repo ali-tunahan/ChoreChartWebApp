@@ -76,6 +76,7 @@ export class ShowChoreComponent implements OnInit {
     this.ChoresListFinishedWithoutFilter = [];
     this.service.getAllChores().subscribe(data=>{
       for (let index = 0; index < data.length; index++) {
+        this.initializeNulls(data[index]);
         if (data[index].IsDone == 0) {
           this.UnfinishedChoresList.push(data[index]);
           this.ChoresListUnfinishedWithoutFilter.push(data[index]);
@@ -88,8 +89,21 @@ export class ShowChoreComponent implements OnInit {
     });
   }
 
+  initializeNulls(chore:any){
+    if (chore.Name == null) {
+      chore.Name = "";
+    }if (chore.Description == null) {
+      chore.Description = "";
+    }if(chore.Priority == null){
+      chore.Priority = "";
+    }
+  }
+
   FilterFn(){
     var ChorePriorityFilter = this.ChorePriorityFilter;
+    if (this.ChorePriorityFilter == "-") {
+      ChorePriorityFilter =" ";
+    }
     var ChoreNameFilter = this.ChoreNameFilter;
     var ChoreDescriptionFilter = this.ChoreDescriptionFilter;
     var HideFinishedChores = this.ShowFinishedChores;

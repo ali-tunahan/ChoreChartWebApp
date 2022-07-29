@@ -33,8 +33,14 @@ export class AddEditChoreComponent implements OnInit {
                 Description:this.Description,
               };
     this.service.addChore(val).subscribe(res=>{
-      alert("Chore Added");
-      
+      alert("Chore Added")
+    }, error => {
+      console.log(error.error.Message)
+      if (error.error.Message != undefined) {
+        alert(error.error.Message)
+      }else{
+        alert(this.cutFluentValidationMessage(error.error))
+      }
     });
   }
 
@@ -49,6 +55,30 @@ export class AddEditChoreComponent implements OnInit {
     this.service.updateChore(val).subscribe(res=>{
     alert("Chore Updated");
     });
+  }
+
+  cutFluentValidationMessage(error:string){
+    var result = ""
+    var foundIndex = 0;
+    var currentChar;
+    for (let index = 0; index < error.length; index++) {
+       currentChar = error.charAt(index)
+       if (currentChar == "-") {
+         foundIndex = index + 2
+         break;
+       }
+    }
+    var remainingError = error.substring(foundIndex,error.length)
+    var words = remainingError.split(" ")
+    for (let index = 0; index < words.length; index++) {
+      var element = words[index];
+      if (element == "Severity:") {
+        break;
+      }else{
+        result = result + element + " "
+      }
+    }
+    return result;
   }
 }
 

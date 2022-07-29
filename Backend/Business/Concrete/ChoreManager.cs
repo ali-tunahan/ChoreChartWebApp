@@ -126,7 +126,7 @@ namespace Business.Concrete
         //Chores can only be get during work hours
         private IResult CheckIfWorkHours()
         {
-            if(DateTime.Now.Hour > 6 && DateTime.Now.Hour < 20)
+            if(DateTime.Now.Hour > 8 && DateTime.Now.Hour < 17)
             {
                 return new SuccessResult();
             }
