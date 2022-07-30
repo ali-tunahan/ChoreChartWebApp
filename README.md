@@ -95,7 +95,7 @@ Angular cli and nodeJS is needed to run the project.
 2. Run the SQLQuery.sql query to create a database (I used SQL Server Express)
 
 3. Insert the location of the database to Backend\DataAccess\Concrete\EntityFramework\ToDoListContext.cs
-4. Run the WebAPI (I used visual studio to build the back end so you can open the back end folder with vs and just run it)
+4. Run the WebAPI (I used visual studio to build the backend so you can open the back end folder with vs and just run it)
 5. Run the frontend by running the command below in cmd at the frontend folder
 
    ```sh
